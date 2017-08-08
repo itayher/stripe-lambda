@@ -1,0 +1,24 @@
+Description: A Lambda function for charging cards with Stripe
+Metadata:
+  Name: stripe-lambda
+  Version: 1.0.0
+  Repo: 'https://github.com/itayher/stripe-lambda.git'
+  Keywords:
+    - stripe
+    - stripe-checkout
+  License: ISC
+  Authors:
+    - Name: itay Herskovits
+      Email: itay@backand.io
+      Url: null
+Resources:
+  stripe-lambda:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Description: A Lambda function for charging cards with Stripe
+      Handler: index.handler
+      Runtime: nodejs6.10
+      CodeUri: 'http://fnhub.backand.io/stripe-lambda/module@1.0.0.zip'
+      Environment:
+        Variables:
+          STRIPE_SECRET_KEY: sk_test_
